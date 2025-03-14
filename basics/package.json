@@ -1,0 +1,20 @@
+{
+  "name": "yjs-basics",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This is a basic template to run JavaScript in the browser or in NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "gentesthtml": "npx 0gentesthtml --script ./index.js > index.html",
+    "start": "npm run gentesthtml && npx 0serve -o index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lib0": "^0.2.99",
+    "y-indexeddb": "^9.0.12",
+    "y-webrtc": "^10.3.0",
+    "y-websocket": "^2.1.0",
+    "yjs": "^13.6.24"
+  }
+}
