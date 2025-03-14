@@ -1,0 +1,18 @@
+{
+  "name": "yjs-codemirror-demo",
+  "version": "1.0.0",
+  "description": "Yjs ❤ CodeMirror",
+  "scripts": {
+    "watch": "webpack -w --stats errors-only",
+    "dist": "webpack --mode=production",
+    "start": "webpack serve --open codemirror.html"
+  },
+  "author": "Kevin Jahns <kevin.jahns@pm.me>",
+  "license": "UNLICENSE",
+  "dependencies": {
+    "yjs": "^13.5.22",
+    "y-websocket": "^1.3.18",
+    "y-codemirror": "^2.1.1",
+    "codemirror": "^5.64.0"
+  }
+}
