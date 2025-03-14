@@ -1,5 +1,6 @@
 
 # Bob <> Yjs CheatSheet
+> Files for the tutorial at Bob 2025
 
 ```sh
 git clone https://github.com/yjs/bob-2025
@@ -26,7 +27,7 @@ const ydoc = new Y.Doc()
 - `Y.encodeStateAsUpdate(ydoc: Y.Doc, stateVector: Uint8Array): Uint8Array` - only encode the differences
 - `Y.encodeStateAsUpdate(ydoc: Y.Doc): Uint8Array` - apply an update to a Yjs doc
 - `ydoc.on('update', (update: Uint8Array) => { /* handle update */ } )` - listen
-  to updates on a Yjs document
+  to incremental updates on a Yjs document
 
 ## Shared Types
 
@@ -56,8 +57,10 @@ yarray.observe(event => {
 
 - `ymap.set(key: string, value: JSON | Y.AbstractType)` - set a key-value pair on
 a Y.Map
-- `yarray.insert(0, Array<JSON|Y.AbstractType>)` - insert elements into a Y.Array.
+- `yarray.insert(index: number, Array<JSON|Y.AbstractType>)` - insert elements into a Y.Array.
 Note that `insert` accepts an Array of values.
+- `yarray.delete(index: number, length: number)` - Delete `length` elements,
+starting at `index`.
 - `ytype.toJSON()` Transform any Yjs type to a JSON-representation.
 
 ## Popular Providers

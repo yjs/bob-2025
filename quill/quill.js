@@ -9,18 +9,9 @@ import QuillCursors from 'quill-cursors'
 Quill.register('modules/cursors', QuillCursors)
 
 window.addEventListener('load', () => {
-  const ydoc = new Y.Doc()
-  const provider = new WebsocketProvider(
-    'wss://demos.yjs.dev/ws', // use the public ws server
-    // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
-    'quill-demo-2024/06',
-    ydoc
-  )
-  const ytext = ydoc.getText('quill')
   const editorContainer = document.createElement('div')
   editorContainer.setAttribute('id', 'editor')
   document.body.insertBefore(editorContainer, null)
-
   const editor = new Quill(editorContainer, {
     modules: {
       cursors: true,
@@ -36,6 +27,15 @@ window.addEventListener('load', () => {
     placeholder: 'Start collaborating...',
     theme: 'snow' // or 'bubble'
   })
+
+  const ydoc = new Y.Doc()
+  const provider = new WebsocketProvider(
+    'wss://demos.yjs.dev/ws', // use the public ws server
+    // `ws${location.protocol.slice(4)}//${location.host}/ws`, // alternatively: use the local ws server (run `npm start` in root directory)
+    'quill-demo-2024/06',
+    ydoc
+  )
+  const ytext = ydoc.getText('quill')
 
   const binding = new QuillBinding(ytext, editor, provider.awareness)
 
